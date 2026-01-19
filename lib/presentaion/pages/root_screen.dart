@@ -20,6 +20,7 @@ class _RootScreenState extends State<RootScreen> {
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
           NavigationDestination(icon: Icon(Icons.menu), label: "List"),
         ],
+        selectedIndex: selectedIndex,
         onDestinationSelected: (value) {
           setState(() {
             selectedIndex = value;
