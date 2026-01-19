@@ -5,6 +5,7 @@ import 'package:groupedbydate/domain/data/datasource.dart';
 import 'package:groupedbydate/presentaion/blocs/todo_bloc.dart';
 import 'package:groupedbydate/presentaion/blocs/todo_event.dart';
 import 'package:groupedbydate/presentaion/pages/home_page.dart';
+import 'package:groupedbydate/presentaion/pages/root_screen.dart';
 
 class BlocWrapper extends StatelessWidget {
   final Datasource datasource;
@@ -23,7 +24,7 @@ class BlocWrapper extends StatelessWidget {
                       TodoBloc(TodoRepoImpl(datasource))..add(LoadTodoEvent()),
             ),
           ],
-          child: HomePage(),
+          child: RootScreen(),
         );
       },
     );
