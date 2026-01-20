@@ -1,8 +1,10 @@
 import 'dart:convert';
 
 import 'package:groupedbydate/domain/model/todo.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+@LazySingleton()
 class Datasource {
   List<Todo> _todos = [];
 

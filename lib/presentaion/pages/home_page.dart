@@ -15,6 +15,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    context.read<TodoBloc>().add(LoadTodoEvent());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final todoProvider = context.read<TodoBloc>();
     return Scaffold(
@@ -134,7 +140,10 @@ class _HomePageState extends State<HomePage> {
                                           .toString(),
                                   title: "title",
 
-                                  dateTime: selectedDate!,
+                                  dateTime:
+                                      selectedDate != null
+                                          ? selectedDate!
+                                          : DateTime.now(),
                                 );
                                 todoProvider.add(AddTodoEvent(todo));
                               },

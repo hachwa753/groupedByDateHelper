@@ -4,7 +4,9 @@ import 'package:groupedbydate/domain/repo/todo_repo.dart';
 import 'package:groupedbydate/presentaion/blocs/todo_event.dart';
 import 'package:groupedbydate/presentaion/blocs/todo_state.dart';
 import 'package:groupedbydate/presentaion/helper/extension.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class TodoBloc extends Bloc<TodoEvent, TodoState> {
   final TodoRepo repo;
   TodoBloc(this.repo) : super(TodoInitial()) {
